@@ -1,0 +1,8 @@
+# Changelog
+
+Document last updated 23rd December, 2020 (8 Tevet 5781).
+
+### Version 0.1.0
+
+- Initial script written to facilitate automatical execution of commands 
+across multiple started iocage-managed jails.
