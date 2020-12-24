@@ -64,4 +64,4 @@ The full text of this license is available in the COPYING file.
 
 ### Acknowledgements
 
-- Thanks to the FFmpeg project team for their useful programmes.
+- Thanks to the iocage project team for their useful utility.
