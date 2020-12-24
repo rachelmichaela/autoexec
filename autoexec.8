@@ -40,6 +40,11 @@ The autoexec utility requires the following argument:
 .It Sy """command""
 The command that should be executed in every jail.
 .El
+.Pp
+The following options are available:
+.Bl -tag -width indent
+.It Sy -f
+Passes the -f flag with exec, starting jails that are currently stopped.
 .Sh EXAMPLES
 To run "pkg upgrade -y" in every jail that is not stopped, use the following
 command.
