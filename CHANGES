@@ -1,6 +1,10 @@
 # Changelog
 
-Document last updated 23rd December, 2020 (8 Tevet 5781).
+Document last updated 24th December, 2020 (9 Tevet 5781).
+
+### Version 0.2.0
+
+- Introduced a flag to pass the force flag with exec.
 
 ### Version 0.1.0
 

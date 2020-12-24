@@ -28,8 +28,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 use warnings;
 use strict;
+use Getopt::Std;
 
 package Autoexec;
+
+my %options;
+Getopt::Std::getopts('f', \%options);
 
 my $num_args = $#ARGV + 1;
 if ($num_args != 1) {
@@ -40,6 +44,11 @@ if ($num_args != 1) {
 }
 
 our $COMMAND = $ARGV[0];
+our $EXECSTR = "iocage exec";
+
+if ($options{f}) {
+	$EXECSTR .= " -f"
+}
 
 my @jails;
 my $i = 0;
@@ -53,6 +62,7 @@ while (my $line = <$fh>) {
 close $fh or die "Could not close ${fh}.\n";
 
 foreach my $jail (@jails) {
-	printf "Executing \"${COMMAND}\" in ${jail}\n";
-	system "iocage exec ${jail} ${COMMAND}";
+	printf "Executing \"${COMMAND}\" in \"${jail}\"\n";
+	printf "DEBUGGING: ${EXECSTR} ${jail} ${COMMAND}";
+	system "${EXECSTR} ${jail} ${COMMAND}";
 }
